@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Min;
 import java.math.BigDecimal;
+import br.edu.ifpb.padroes.service.impl.visitor.Visitor;
 
 @Entity
 @Table(name = "product")
@@ -87,4 +88,6 @@ public abstract class Product {
     public int hashCode() {
         return id.hashCode();
     }
+
+    public abstract BigDecimal accept(Visitor visitor);
 }
